@@ -171,11 +171,11 @@
                 </div>
                 <div class="fd">
                     <div class="input_wrap">
-                        <span class="txt"><input type="text" placeholder="输入手机号 领取豪礼" /></span>
+                        <span class="txt"><input type="text" placeholder="nter the mobile phone number to receive notification" /></span>
                         <a href="#" class="btn btn_submit"></a>
                     </div>
                     <div class="account">
-                        <p>奖品已放置账户：<span class="phone">13590193775</span>(<a href="#" class="modify">修改</a>)</p>
+                        <p>Prizes have been placed Account：<span class="phone">13590193775</span>(<a href="#" class="modify">edit</a>)</p>
                     </div>
                     <div>
                         <a href="#" class="btn btn_success"></a>
@@ -205,21 +205,16 @@ window.onload = function(){
     $(function(){
          var NUM = 0,
              numarr = [5,10,16,21,26,29,33];
-        // 图片单页面的切换
         $('.page1 .footer').on("click",function(){
             $('.page1').addClass("animated bounceOutLeft").removeClass("current").hide();
             $('.page.page2').show().addClass("current");
             return false;
         })
-
-        // 进入第三页
         $('.page2 .fd').on("click",function(){
             $('.page.page2').hide().removeClass("current");
             $('.page.page3').show().addClass("current");
             return false;
         });
-
-        // 进入第四页
          $('.page3 .icon.clickBtn ').on("click",function(){
             var index = parseInt(7*Math.random());    //随机的一个数   6 ，10,16,21,27,34
             var num = numarr[index];
@@ -245,18 +240,12 @@ window.onload = function(){
             },100*num+500);
             return false;
         });
-
-         
-       
-
-
-        // 图4点击确定
         $('.page4 .btn_submit').on("click",function(){
             var phone = $(".input_wrap .txt input").val();
             if(!phone){
                 $('body').loader({
                     status: 'error',
-                    text: '请输入手机号码'
+                    text: 'Please enter phone number'
                 })
                 return;
             }
